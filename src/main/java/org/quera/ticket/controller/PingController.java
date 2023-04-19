@@ -1,6 +1,6 @@
 package org.quera.ticket.controller;
 
-import org.springframework.http.ResponseEntity;
+import org.quera.ticket.dto.PingResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class PingController {
 
     @GetMapping(value = "/ping")
-    public ResponseEntity<String> validation(){
-        return ResponseEntity.ok("ok");
+    public PingResponse validation(){
+        PingResponse pingResponse = new PingResponse();
+        pingResponse.setMessage("ok");
+        return pingResponse;
     }
 }
