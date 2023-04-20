@@ -4,6 +4,8 @@ import org.quera.ticket.models.User;
 import org.quera.ticket.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,5 +25,10 @@ public class UserServiceImpl {
 
     public void saveUser(User user) {
         userRepository.save(user);
+    }
+
+    public List<User> findAll(){
+        List<User> users = new ArrayList<>();
+        return users = userRepository.findAll();
     }
 }
